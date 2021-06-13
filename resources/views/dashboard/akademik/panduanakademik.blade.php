@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title','Akreditasi')
+@section('title','Panduan Akademik')
 @section('header')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
@@ -25,21 +25,21 @@
 <div class="panel">
   <div class="panel-heading">
     <div class="col-md-6">
-      <h3 class="panel-title">Halaman Akreditasi</h3>
+      <h3 class="panel-title">Halaman Panduan Akademik</h3>
     </div>
     <div class="col-md-6">
-      <a href="#" class="btn btn-primary navbar-btn-right" data-toggle="modal" data-target="#tambahakreditasi"  id="btn-tambahakreditasi">
-        Tambah akreditasi
+      <a href="#" class="btn btn-primary navbar-btn-right" data-toggle="modal" data-target="#tambahpanduan"  id="btn-tambahpanduan">
+        Tambah data
       </a>
     </div>
   </div>
   <div class="panel-body" style="margin-top: 10px;">
-    @if($akreditasis->count() != 0)
-    <table class="table table-hover" id="data_akreditasis_reguler" style="margin-top: 10px;">
+    @if($panduans->count() != 0)
+    <table class="table table-hover" id="data_panduans_reguler" style="margin-top: 10px;">
       <thead>
         <tr>
             <th>#</th>
-            <th>Nama Akreditasi</th>
+            <th>Judul Panduan</th>
             <th>Nomor</th>
             <th>Dokumen</th>
 		    <th>Aksi</th>
@@ -47,19 +47,19 @@
       </thead>
       <tbody>
 
-		@foreach($akreditasis as $akreditasi)
+		@foreach($panduans as $panduan)
         <tr>
           <td>{{$loop->iteration}}</td>
-          <td>{{$akreditasi->nama_akreditasi}}</td>
-          <td>{{$akreditasi->nomor}}</td>
-          <td> <a href="{{url('doc/akreditasi/'.$akreditasi->file)}}" target="_blank"> Download</a> </td>
-			<td> <a href="#" class="btn btn-danger hapus-akreditasi" title="Hapus" data-akreditasi_id="{{$akreditasi->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
+          <td>{{$panduan->judul_panduan}}</td>
+          <td>{{$panduan->nomor}}</td>
+          <td> <a href="{{url('doc/panduan/'.$panduan->file)}}" target="_blank"> Download</a> </td>
+			<td> <a href="#" class="btn btn-danger hapus-panduan" title="Hapus" data-panduan_id="{{$panduan->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
         </tr>
 		@endforeach
       </tbody>
     </table>
     @else
-    <h3>Belum ada data akreditasi</h3>
+    <h3>Belum ada data panduan</h3>
     @endif
   </div>
 </div>
@@ -67,34 +67,33 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="tambahakreditasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="tambahpanduan" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah akreditasi</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah panduan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-			<form class="" action="{{route('storeAkreditasi')}}" method="post" enctype="multipart/form-data">
+			<form class="" action="{{route('storePanduan')}}" method="post" enctype="multipart/form-data">
 				@csrf
 	      <div class="modal-body">
           <div class="row form-group">
             <div class="col-md-4">
-              <span>Nama akreditasi</span>
+              <span>Nama panduan</span>
             </div>
             <div class="col-md-8">
-              <input type="hidden" name="user_id" id="user_id" value="">
-              <input type="text" name="nama_akreditasi" value="" class="form-control" placeholder="Nama akreditasi...">
+              <input type="text" name="judul_panduan" value="" class="form-control" placeholder="Judul panduan...">
             </div>
           </div>
           <div class="row form-group">
             <div class="col-md-4">
-              <span>Nomor</span>
+              <span>Nomor atau Tahun</span>
             </div>
             <div class="col-md-8">
               <input type="hidden" name="user_id" id="user_id" value="">
-              <input type="text" name="nomor" value="" class="form-control" placeholder="Nomor Akreditasi...">
+              <input type="text" name="nomor" value="" class="form-control" placeholder="Nomor panduan...">
             </div>
           </div>
           <div class="row form-group">
@@ -123,13 +122,13 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#btn-tambahakreditasi').click(function(){
+		$('#btn-tambahpanduan').click(function(){
 
 		});
-		$('#data_akreditasis_reguler').DataTable();
+		$('#data_panduans_reguler').DataTable();
 
-		$('.hapus-akreditasi').click(function(){
-			const akreditasi_id = $(this).data('akreditasi_id');
+		$('.hapus-panduan').click(function(){
+			const panduan_id = $(this).data('panduan_id');
 	    swal({
             title: "Hapus?",
             text: "Apa kamu yakin akan menghapus data ini?",
@@ -139,7 +138,7 @@
         })
         .then((willDelete) => {
             if (willDelete) {
-            window.location = '/admin/akreditasi-institusi/delete/'+akreditasi_id;
+            window.location = '/admin/panduan-akademik/delete/'+panduan_id;
             }
         });
 

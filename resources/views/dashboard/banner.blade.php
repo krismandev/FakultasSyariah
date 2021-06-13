@@ -113,7 +113,7 @@
       })
       .then((willDelete) => {
         if (willDelete) {
-          window.location = '/dashboard/banner/delete/'+banner_id;
+          window.location = '/admin/banner/delete/'+banner_id;
         }
       });
 			// const hapus = confirm('Yakin ingin menghapus gambar ini?');

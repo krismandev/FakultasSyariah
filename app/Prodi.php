@@ -12,4 +12,9 @@ class Prodi extends Model
     {
         return $this->hasMany(AkreditasiProdi::class,'prodi_id','id');
     }
+
+    public function dosen_prodi()
+    {
+        return $this->hasMany(DosenProdi::class,'prodi_id','id');
+    }
 }

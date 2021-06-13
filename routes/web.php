@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/delete/{id}','Dashboard\BeritaController@deleteBerita')->name('deleteBerita');
     });
 
+
     Route::group(['prefix'=>'banner'],function(){
         Route::get('/','Dashboard\BannerController@getBanner')->name('getBanner');
         Route::post('/','Dashboard\BannerController@storeBanner')->name('storeBanner');
@@ -50,10 +51,57 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/delete/{id}','Dashboard\AkreditasiController@deleteAkrProdi')->name('deleteAkrProdi');
     });
 
+    Route::group(['prefix'=>'panduan-akademik'],function(){
+        Route::get('/','Dashboard\PanduanAkademikController@getPanduan')->name('getPanduan');
+        Route::post('/','Dashboard\PanduanAkademikController@storePanduan')->name('storePanduan');
+        Route::get('/delete/{id}','Dashboard\PanduanAkademikController@deletePanduan')->name('deletePanduan');
+    });
+
     Route::group(['prefix'=>'kalender-wisuda'],function(){
         Route::get('/','Dashboard\KalenderWisudaController@getKalenderWisuda')->name('getKalenderWisuda');
         Route::post('/','Dashboard\KalenderWisudaController@storeKalenderWisuda')->name('storeKalenderWisuda');
         Route::get('/delete/{id}','Dashboard\KalenderWisudaController@deleteKalenderWisuda')->name('deleteKalenderWisuda');
+    });
+
+    Route::group(['prefix'=>'profil'],function(){
+        Route::group(['prefix'=>'visimisi'],function(){
+            Route::get('/','Dashboard\ProfilController@getVisiMisi')->name('getVisiMisi');
+            Route::post('/','Dashboard\ProfilController@storeVisiMisi')->name('storeVisiMisi');
+        });
+
+        Route::group(['prefix'=>'struktur-organisasi'],function(){
+            Route::get('/','Dashboard\StrukturOrganisasiController@getStruktur')->name('getStruktur');
+            Route::post('/','Dashboard\StrukturOrganisasiController@storeStruktur')->name('storeStruktur');
+        });
+
+        Route::group(['prefix'=>'sejarah'],function(){
+            Route::get('/','Dashboard\ProfilController@getSejarah')->name('getSejarah');
+            Route::post('/','Dashboard\ProfilController@storeSejarah')->name('storeSejarah');
+        });
+
+        Route::group(['prefix'=>'renstra'],function(){
+            Route::get('/','Dashboard\ProfilController@getRenstra')->name('getRenstra');
+            Route::post('/','Dashboard\ProfilController@storeRenstra')->name('storeRenstra');
+        });
+
+        Route::group(['prefix'=>'struktur-organisasi'],function(){
+            Route::get('/','Dashboard\ProfilController@getStruktur')->name('getStruktur');
+            Route::post('/','Dashboard\ProfilController@storeStruktur')->name('storeStruktur');
+        });
+
+        Route::group(['prefix'=>'senat-fakultas'],function(){
+            Route::get('/','Dashboard\ProfilController@getSenat')->name('getSenat');
+            Route::post('/','Dashboard\ProfilController@storeSenat')->name('storeSenat');
+        });
+    });
+
+    Route::group(['prefix'=>'prodi'],function(){
+        Route::get('/','Dashboard\ProdiController@getProdi')->name('getProdi');
+        Route::post('/','Dashboard\ProdiController@updateProdi')->name('updateProdi');
+        Route::get('/{id}','Dashboard\ProdiController@editProdi')->name('editProdi');
+        Route::post('/dosen','Dashboard\ProdiController@storeDosen')->name('storeDosen');
+        Route::get('/dosen/delete/{id}','Dashboard\ProdiController@deleteDosen')->name('deleteDosen');
+
     });
 
 });

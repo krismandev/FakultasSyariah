@@ -1,5 +1,5 @@
 @extends('layouts/dashboard/master')
-@section('title','Buat berita baru')
+@section('title','Renstra')
 @section('header')
 
 @stop
@@ -24,7 +24,7 @@
 <div class="panel">
   <div class="panel-heading" style="margin-bottom:20px;">
     <div class="col-md-6">
-      <h3 class="panel-title">Buat Berita</h3>
+      <h3 class="panel-title">Rencana Strategis</h3>
     </div>
     {{-- <div class="col-md-6">
       <a href="" class="btn btn-primary navbar-btn-right" id="btn-tambahpost">
@@ -34,22 +34,15 @@
   </div>
   <hr>
   <div class="panel-body">
-  <form action="{{route('storeBerita')}}" method="post" enctype="multipart/form-data">
+    @if ($renstra == null)
+  <form action="{{route('storeRenstra')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
       <div class="col-lg-2">
-        Gambar
+        Dokumen
       </div>
       <div class="col-lg-10">
-        <input type="file" class="form-control" name="gambar">
-      </div>
-    </div>
-    <div class="row" style="margin-top:10px;">
-      <div class="col-lg-2">
-        Judul
-      </div>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" placeholder="tulis judul disini..." name="judul">
+        <input type="file" class="form-control" name="file">
       </div>
     </div>
     <div class="row" style="margin-top:10px;">
@@ -58,7 +51,8 @@
       </div>
     </div>
     <div class="row mt-5" style="margin-top:10px;">
-      <textarea class="form-control" name="konten" rows="10" cols="auto" id="konten"></textarea>
+        <small>Tulis Rencana Strategis Pada Textbox dibawah ini.</small>
+        <textarea class="form-control" name="konten" rows="10" cols="auto" id="konten">{{old('konten')}}</textarea>
     </div>
     <div class="row" style="margin-top:10px;">
       <div class="col-lg-10">
@@ -66,6 +60,39 @@
       </div>
     </div>
   </form>
+  @else
+  <form action="{{route('storeRenstra')}}" method="post" enctype="multipart/form-data">
+    @csrf
+    <div class="row">
+      <div class="col-lg-2">
+        Dokumen
+      </div>
+      <div class="col-lg-6">
+        <input type="file" class="form-control" name="file">
+        <small>Abaikan jika tidak ingin mengubah dokumen</small>
+      </div>
+      <div class="col-lg-4">
+          @if ($renstra->file != null)
+          <a href="{{url('doc/renstra/'.$renstra->file)}}" class="btn btn-primary"> Download</a>
+          @endif
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px;">
+      <div class="col-lg-2">
+        <h4>Konten</h4>
+      </div>
+    </div>
+    <div class="row mt-5" style="margin-top:10px;">
+        <small>Tulis Rencana Strategis Pada Textbox dibawah ini.</small>
+        <textarea class="form-control" name="konten" rows="10" cols="auto" id="konten">{{$renstra->konten}}</textarea>
+    </div>
+    <div class="row" style="margin-top:10px;">
+      <div class="col-lg-10">
+        <button type="submit" name="button" class="btn btn-primary"> <i class="lnr lnr-upload"></i>Simpan</button>
+      </div>
+    </div>
+  </form>
+  @endif
   </div>
 </div>
 

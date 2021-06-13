@@ -72,7 +72,8 @@
 	<script src="{{asset('assets-admin/assets/scripts/klorofil-common.js')}}"></script>
 	<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
-	<script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+	{{-- <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script> --}}
+    <script src="https://cdn.ckeditor.com/4.16.1/full-all/ckeditor.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

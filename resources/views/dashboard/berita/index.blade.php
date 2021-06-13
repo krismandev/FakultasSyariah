@@ -83,10 +83,10 @@
 		$('#btn-tambahberita').click(function(){
 
 		});
-		// $('#data_beritas_reguler').DataTable({
+	// 	$('#data_beritas_reguler').DataTable({
     //   'order':[[5,'desc']]
     // });
-		// $('#data_beritas_reguler').DataTable();
+		$('#data_beritas_reguler').DataTable();
 
 		$('.hapus-berita').click(function(){
 			const berita_id = $(this).data('berita_id');
