@@ -127,103 +127,7 @@
         </div><!-- /.container -->
     </header><!-- /.head-area -->
 
-    <!-- ====== Header Bottom Content ====== -->
-    <header class="header-bottom-content bg-nero hidden-xs hidden-sm">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-sm-10">
-                    <nav id="main-nav" class="site-navigation top-navigation">
-                        <div class="menu-wrapper">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                    <li>
-                                        <a href="#">Home</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="index.html">Home Layout One</a>
-                                            </li>
-                                            <li>
-                                                <a href="index02.html">Home Layout Two</a>
-                                            </li>
-                                            <li>
-                                                <a href="index03.html">Home Layout Three</a>
-                                            </li>
-                                            <li>
-                                                <a href="index04.html">Home Layout Four</a>
-                                            </li>
-                                            <li>
-                                                <a href="index05.html">Home Layout Five</a>
-                                            </li>
-                                            <li>
-                                                <a href="index06.html">Home Layout Six</a>
-                                            </li>
-                                            <li>
-                                                <a href="index07.html">Home Layout Seven</a>
-                                            </li>
-                                            <li>
-                                                <a href="index08.html">Home Layout Eight</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="booking.html">Booking</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">House</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="apartment.html">All Apartment</a>
-                                            </li>
-                                            <li>
-                                                <a href="apartment-single.html">Apartment Single</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="gallery.html">Our Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a href="comming.html">Coming Soon</a>
-                                            </li>
-                                            <li>
-                                                <a href="404.html">404</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="about.html">About</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="blog.html">Blog</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-single.html">Single Post</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-                                </ul> <!-- /.menu-list -->
-                            </div> <!-- /.menu-content-->
-                        </div> <!-- /.menu-wrapper -->
-                    </nav><!-- /.site-navigation -->
-                </div><!-- /.col-md-10 -->
-
-                <div class="col-md-2 col-sm-2">
-                    <div class="booking">
-                        <span><a href="booking.html">Booking</a></span>
-                    </div><!-- /.Booking -->
-                </div><!-- /.col-md-2 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </header><!-- /.header-bottom-content -->
+    @include('layouts.guest.navbar')
 
     <!-- ====== Header Overlay Content ====== -->
     <div class="header-overlay-content">
@@ -397,7 +301,25 @@
     <!-- ======slider Area====== -->
     <div class="slider-area">
         <div class="pogoSlider">
-            <div class="pogoSlider-slide" data-transition="expandReveal" data-duration="1000" style="background-image:url({{asset('frontend/assets/images/slider-one.png);')}}">
+            @if ($banners != null)
+            @foreach ($banners as $banner)
+            <div class="pogoSlider-slide" data-transition="expandReveal" data-duration="1000" style="background-image:url({{url('img/banner/'.$banner->gambar)}}" style="width: 1920px; height: 590px;">
+                <div class="container-slider one">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slider-text-content">
+                                {{-- <h3 class="pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">Good Service is our passion</h3>
+                                <h2 class="pogoSlider-slide-element" data-in="slide-left" data-out="slideUp" data-duration="500" data-delay="500">Awesome apartment Villa</h2>
+                                <p class="pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">No matter what the weather, no matter what the situation we are in, if we have the right perspective in life, life will always be beautiful!</p>
+                                <a href="#" class="button pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">Special Offer</a> --}}
+                            </div><!-- /.text-content -->
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-slider -->
+            </div>
+            @endforeach
+            @endif
+            {{-- <div class="pogoSlider-slide" data-transition="expandReveal" data-duration="1000" style="background-image:url({{asset('frontend/assets/images/slider-one.png);')}}">
                 <div class="container-slider one">
                     <div class="row">
                         <div class="col-md-12">
@@ -410,21 +332,7 @@
                         </div><!-- /.col-md-12 -->
                     </div><!-- /.row -->
                 </div><!-- /.container-slider -->
-            </div>
-            <div class="pogoSlider-slide" data-transition="expandReveal" data-duration="1000" style="background-image:url({{asset('frontend/assets/images/slider-one.png);')}}">
-                <div class="container-slider one">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slider-text-content">
-                                <h3 class="pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">Good Service is our passion</h3>
-                                <h2 class="pogoSlider-slide-element" data-in="slide-left" data-out="slideUp" data-duration="500" data-delay="500">Awesome apartment Villa</h2>
-                                <p class="pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">No matter what the weather, no matter what the situation we are in, if we have the right perspective in life, life will always be beautiful!</p>
-                                <a href="#" class="button pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="500" data-delay="500">Special Offer</a>
-                            </div><!-- /.text-content -->
-                        </div><!-- /.col-md-12 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-slider -->
-            </div>
+            </div> --}}
         </div><!-- .pogoSlider -->
     </div><!-- /.slider-area container-fluid -->
 
@@ -554,102 +462,46 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="heading-content-one">
-                        <h2 class="title">Our Blog Post</h2>
-                        <h5 class="sub-title">Our News Feed</h5>
+                        <h2 class="title">Berita Terbaru</h2>
+                        {{-- <h5 class="sub-title">Our News Feed</h5> --}}
                     </div><!-- /.blog-heading-content -->
                 </div><!-- /.row -->
             </div><!-- /.col-md-12 -->
             <div class="row">
+                @if ($beritas != null)
+                @foreach ($beritas as $berita)
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <article class="post">
                         <figure class="post-thumb">
                             <a href="blog-single.html">
-                                <img src="{{asset('frontend/assets/images/blog/blog-one.png')}}" alt="blog" />
+                                <img src="{{asset('img/berita/'.$berita->gambar)}}" alt="blog" />
                             </a>
                         </figure><!-- /.post-thumb -->
                         <div class="post-content">
                             <div class="entry-meta">
                                 <span class="entry-date">
-                                    July 25, 2016
+                                    {{date("d M Y",strtotime($berita->created_at))}}
                                 </span>
-                                <span class="devied"></span>
-                                <span class="entry-category">
+                                {{-- <span class="devied"></span> --}}
+                                {{-- <span class="entry-category">
                                     <a href="#">Rooms &amp; suites</a>
-                                </span>
+                                </span> --}}
                             </div><!-- /.entry-header -->
                             <div class="entry-header">
-                                <h3><a href="blog-single.html">Finding best places to visit in California</a></h3>
+                                <h3><a href="blog-single.html">{{$berita->judul}}</a></h3>
                             </div><!-- /.entry-header -->
-                            <div class="entry-footer">
+                            {{-- <div class="entry-footer">
                                 <div class="entry-footer-meta">
                                     <span class="view"><i class="fa fa-eye"></i>35</span>
                                     <span class="like"><a href="#"><i class="fa fa-heart-o"></i>09</a></span>
                                     <span class="comments"><a href="#"><i class="fa fa-comments"></i>05</a></span>
                                 </div><!-- /.entry-footer-meta -->
-                            </div><!-- /.entry-footer -->
+                            </div><!-- /.entry-footer --> --}}
                         </div><!-- /.post-content -->
                     </article><!-- /.post -->
                 </div><!-- /.col-md-4 -->
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <article class="post">
-                        <figure class="post-thumb">
-                            <a href="blog-single.html">
-                                <img src="{{asset('frontend/assets/images/blog/blog-two.png')}}" alt="blog" />
-                            </a>
-                        </figure><!-- /.post-thumb -->
-                        <div class="post-content">
-                            <div class="entry-meta">
-                                <span class="entry-date">
-                                    July 25, 2016
-                                </span>
-                                <span class="devied"></span>
-                                <span class="entry-category">
-                                    <a href="#">Rooms &amp; suites</a>
-                                </span>
-                            </div><!-- /.entry-header -->
-                            <div class="entry-header">
-                                <h3><a href="blog-single.html">Finding best places to visit in California</a></h3>
-                            </div><!-- /.entry-header -->
-                            <div class="entry-footer">
-                                <div class="entry-footer-meta">
-                                    <span class="view"><i class="fa fa-eye"></i>35</span>
-                                    <span class="like"><a href="#"><i class="fa fa-heart-o"></i>09</a></span>
-                                    <span class="comments"><a href="#"><i class="fa fa-comments"></i>05</a></span>
-                                </div><!-- /.entry-footer-meta -->
-                            </div><!-- /.entry-footer -->
-                        </div><!-- /.post-content -->
-                    </article><!-- /.post -->
-                </div><!-- /.col-md-4 -->
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <article class="post">
-                        <figure class="post-thumb">
-                            <a href="blog-single.html">
-                                <img src="{{asset('frontend/assets/images/blog/blog-three.png')}}" alt="blog" />
-                            </a>
-                        </figure><!-- /.post-thumb -->
-                        <div class="post-content">
-                            <div class="entry-meta">
-                                <span class="entry-date">
-                                    July 25, 2016
-                                </span>
-                                <span class="devied"></span>
-                                <span class="entry-category">
-                                    <a href="#">Rooms &amp; suites</a>
-                                </span>
-                            </div><!-- /.entry-header -->
-                            <div class="entry-header">
-                                <h3><a href="blog-single.html">Finding best places to visit in California</a></h3>
-                            </div><!-- /.entry-header -->
-                            <div class="entry-footer">
-                                <div class="entry-footer-meta">
-                                    <span class="view"><i class="fa fa-eye"></i>35</span>
-                                    <span class="like"><a href="#"><i class="fa fa-heart-o"></i>09</a></span>
-                                    <span class="comments"><a href="#"><i class="fa fa-comments"></i>05</a></span>
-                                </div><!-- /.entry-footer-meta -->
-                            </div><!-- /.entry-footer -->
-                        </div><!-- /.post-content -->
-                    </article><!-- /.post -->
-                </div><!-- /.col-md-4 -->
+                @endforeach
+                @endif
             </div><!-- /.row -->
             <a href="blog.html" class="button">show all</a>
         </div><!-- /.container -->

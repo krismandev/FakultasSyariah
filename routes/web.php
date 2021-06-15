@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('guest.index');
-});
+Route::get('/','HomeController@index')->name('index');
 
 Auth::routes();
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/login','AuthController@postLogin')->name('postLogin');
 Route::get('/logout','AuthController@logout')->name('logout');
+
+Route::get('/berita','BeritaController@berita')->name('berita');
 
 Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], function(){
     Route::get('/','Dashboard\HomeController@index')->name('index_admin');
@@ -37,6 +37,12 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/','Dashboard\BannerController@getBanner')->name('getBanner');
         Route::post('/','Dashboard\BannerController@storeBanner')->name('storeBanner');
         Route::get('/delete/{id}','Dashboard\BannerController@deleteBanner')->name('deleteBanner');
+    });
+
+    Route::group(['prefix'=>'galeri'],function(){
+        Route::get('/','Dashboard\GaleriController@getGaleri')->name('getGaleri');
+        Route::post('/','Dashboard\GaleriController@storeGaleri')->name('storeGaleri');
+        Route::get('/delete/{id}','Dashboard\GaleriController@deleteGaleri')->name('deleteGaleri');
     });
 
     Route::group(['prefix'=>'akreditasi-institusi'],function(){
@@ -102,6 +108,12 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::post('/dosen','Dashboard\ProdiController@storeDosen')->name('storeDosen');
         Route::get('/dosen/delete/{id}','Dashboard\ProdiController@deleteDosen')->name('deleteDosen');
 
+    });
+
+    Route::group(['prefix'=>'laporan'],function(){
+        Route::get('/','Dashboard\LaporanController@getLaporan')->name('getLaporan');
+        Route::post('/','Dashboard\LaporanController@storeLaporan')->name('storeLaporan');
+        Route::get('/delete/{id}','Dashboard\LaporanController@deleteLaporan')->name('deleteLaporan');
     });
 
 });

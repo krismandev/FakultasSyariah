@@ -9,10 +9,10 @@ Version: 1.0
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Typography 
-    ## copy 
-    ## headings 
-    ## typography 
+# Typography
+    ## copy
+    ## headings
+    ## typography
 # Elements
 	## elements
 	## lists
@@ -33,7 +33,7 @@ Version: 1.0
 # Clearings
 # Layout
     ## Header Part
-    	## Sign In/Sign Up Pop up 
+    	## Sign In/Sign Up Pop up
     ## Slider Part
     ## Category Menu Part
     ## Abaility Part
@@ -3105,8 +3105,8 @@ pagination
   }
 }
 
-/* -------------------------------- 
-Sign In/Sign Up Pop up 
+/* --------------------------------
+Sign In/Sign Up Pop up
 -------------------------------- */
 .cd-user-modal {
   position: fixed;
@@ -5526,7 +5526,7 @@ Sign In/Sign Up Pop up
 }
 
 .blog-content-right {
-  margin-top: 85px;
+  margin-top: 0px;
 }
 
 .post-filter-area h5 {

@@ -35,15 +35,11 @@
       			</ul>
       		</div>
       	</li>
+        <li><a href="{{route('getLaporan')}}" class="{{(request()->is('admin/laporan*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Laporan</span></a></li>
+
         <li>
-      		<a href="#galeri" data-toggle="collapse" class="collapsed {{(request()->is('admin/foto*') || request()->is('admin/poster*') ) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Galeri</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-      		<div id="galeri" class="collapse" aria-expanded="false" style="height: 0px;">
-      			<ul class="nav">
-      				<li class="{{(request()->is('admin/foto*')) ? 'active' : ''}}"><a href="" >Foto </a></li>
-      				<li class="{{(request()->is('admin/poster*')) ? 'active' : ''}}"><a href="">Poster </a></li>
-      			</ul>
-      		</div>
-      	</li>
+            <a href="{{route('getGaleri')}}" class="{{(request()->is('admin/galeri*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Galeri</span></a>
+        </li>
 
         @if(auth()->user()->role == 'superadmin')
     		<li>
