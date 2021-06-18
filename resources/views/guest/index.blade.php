@@ -16,7 +16,7 @@
 
     <!-- Titles
     ================================================== -->
-    <title>House Rent | Home 01</title>
+    <title>Beranda - Fakultas Syariah UIN STS Jambi</title>
 
     <!-- Favicons
     ================================================== -->
@@ -75,8 +75,8 @@
                         </div><!-- /.menu-area -->
                         <div class="logo-area tb-cell">
                             <div class="site-logo">
-                                <a href="index.html">
-                                    <img src="{{asset('frontend/assets/images/logo.png')}}" alt="site-logo" />
+                                <a href="{{route('index')}}">
+                                    <img src="{{asset('img/logo_uin.png')}}" alt="site-logo" style="width: 44px; height: 44px;"/>
                                 </a>
                             </div><!-- /.site-logo -->
                         </div><!-- /.logo-area -->
@@ -99,8 +99,8 @@
                 <div class="row">
                     <div class="col-md-7 col-sm-7 mobile-center">
                         <div class="site-logo">
-                            <a href="index.html">
-                                <img src="{{asset('frontend/assets/images/logo.png" alt="site-logo')}}" />
+                            <a href="{{route('index')}}">
+                                <img src="{{asset('img/logo_uin.png')}}" alt="site-logo" style="width: 44px; height: 44px;"/>
                             </a>
                         </div><!-- /.site-logo -->
                     </div><!-- /.col-md-8 -->
@@ -110,7 +110,7 @@
                                 <li>
                                     <a href="#"><i class="fa fa-phone-square"></i>Call Us - 01623 030020</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="cd-signin"><i class="fa fa-address-book"></i>Login / Register</a>
                                 </li>
                                 <li>
@@ -118,7 +118,7 @@
                                 </li>
                                 <li>
                                     <a href="#" class="trigger-overlay"><i class="fa fa-bars"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div><!-- /.left-content -->
                     </div><!-- /.col-md-4 -->

@@ -45,7 +45,7 @@
     </div>
   </form>
 	@else
-  <form class="" action="{{route('storeVisiMisi')}}" method="post">
+  <form class="" action="{{route('storeSejarah')}}" method="post">
     @csrf
     <div class="panel-body">
         <div class="row mt-3" style="margin-top: 20px;">

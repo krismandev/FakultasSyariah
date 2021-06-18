@@ -44,7 +44,7 @@
                                     <div class="col-md-6 col-sm-6">
                                         <article class="post">
                                             <figure class="post-thumb">
-                                                <a href="blog-single.html">
+                                                <a href="{{route('singleBerita',['id'=>$berita->id,'slug'=>$berita->slug])}}">
                                                     <img src="{{url('img/berita/'.$berita->gambar)}}" alt="blog" style="width: 360px; height: 232px; object-fit: cover; object-position: center;"/>
                                                 </a>
                                             </figure><!-- /.post-thumb -->
@@ -59,7 +59,7 @@
                                                     </span>
                                                 </div><!-- /.entry-header -->
                                                 <div class="entry-header">
-                                                    <h3><a href="blog-single.html">{{$berita->judul}}</a></h3>
+                                                    <h3><a href="{{route('singleBerita',['id'=>$berita->id,'slug'=>$berita->slug])}}">{{$berita->judul}}</a></h3>
                                                 </div><!-- /.entry-header -->
                                             </div><!-- /.post-content -->
                                         </article><!-- /.post -->

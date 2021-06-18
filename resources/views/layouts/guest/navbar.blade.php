@@ -15,25 +15,25 @@
                                     <a href="{{route('index')}}">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="booking.html">Booking</a>
+                                    <a href="{{route('galeri')}}">Galeri</a>
                                 </li>
                                 <li>
                                     <a href="#">Profile</a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="apartment.html">Sejarah</a>
+                                            <a href="{{route('sejarah')}}">Sejarah</a>
                                         </li>
                                         <li>
-                                            <a href="apartment-single.html">Visi & Misi</a>
+                                            <a href="{{route('visimisi')}}">Visi & Misi</a>
                                         </li>
                                         <li>
-                                            <a href="apartment-single.html">Struktur Organisasi</a>
+                                            <a href="{{route('struktur')}}">Struktur Organisasi</a>
                                         </li>
                                         <li>
-                                            <a href="apartment-single.html">Rencana Strategis</a>
+                                            <a href="{{route('renstra')}}">Rencana Strategis</a>
                                         </li>
                                         <li>
-                                            <a href="apartment-single.html">Senat Fakultas</a>
+                                            <a href="{{route('senat')}}">Senat Fakultas</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -41,7 +41,7 @@
                                     <a href="#">Akademik</a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="gallery.html">Akreditasi</a>
+                                            <a href="{{route('akreditasi')}}">Akreditasi</a>
                                         </li>
                                         <li>
                                             <a href="comming.html">Panduan Akademik</a>
@@ -74,11 +74,6 @@
                 </nav><!-- /.site-navigation -->
             </div><!-- /.col-md-10 -->
 
-            <div class="col-md-2 col-sm-2">
-                <div class="booking">
-                    <span><a href="booking.html">Booking</a></span>
-                </div><!-- /.Booking -->
-            </div><!-- /.col-md-2 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </header><!-- /.header-bottom-content -->

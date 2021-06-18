@@ -4,7 +4,7 @@
   <div class="sidebar-scroll">
     <nav>
       <ul class="nav">
-        <li><a href="{{route('index_admin')}}" class="{{(request()->is('admin')) ? 'active' : ''}}"><i class="lnr lnr-home"></i> <span>admin</span></a></li>
+        <li><a href="{{route('index_admin')}}" class="{{(request()->is('admin')) ? 'active' : ''}}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
         <li><a href="{{route('getProdi')}}" class="{{(request()->is('admin/prodi*')) ? 'active' : ''}}"><i class="lnr lnr-tag"></i> <span>Prodi</span></a></li>
         <li><a href="{{route('getBerita')}}" class="{{(request()->is('admin/berita*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Berita</span></a></li>
         <li>

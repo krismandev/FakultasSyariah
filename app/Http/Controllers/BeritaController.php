@@ -13,4 +13,11 @@ class BeritaController extends Controller
         $berita_lainnya = Berita::inRandomOrder()->paginate(5);
         return view('guest.berita.berita',compact(['beritas','berita_lainnya']));
     }
+
+    public function singleBerita($id)
+    {
+        $beritas = Berita::inRandomOrder()->paginate(3);
+        $berita = Berita::find($id);
+        return view('guest.berita.singleBerita',compact(['berita','beritas']));
+    }
 }

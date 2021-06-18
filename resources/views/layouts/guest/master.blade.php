@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/plugins.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/colors.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Modernizr
     ================================================== -->
     <script src="{{asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
@@ -99,8 +100,8 @@
                 <div class="row">
                     <div class="col-md-7 col-sm-7 mobile-center">
                         <div class="site-logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo.png" alt="site-logo" />
+                            <a href="{{route('index')}}">
+                                <img src="{{asset('img/logo_uin.png')}}" alt="site-logo" style="width: 44px; height: 44px;"/>
                             </a>
                         </div><!-- /.site-logo -->
                     </div><!-- /.col-md-8 -->
@@ -110,7 +111,7 @@
                                 <li>
                                     <a href="#"><i class="fa fa-phone-square"></i>Call Us - 01623 030020</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="cd-signin"><i class="fa fa-address-book"></i>Login / Register</a>
                                 </li>
                                 <li>
@@ -118,7 +119,7 @@
                                 </li>
                                 <li>
                                     <a href="#" class="trigger-overlay"><i class="fa fa-bars"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div><!-- /.left-content -->
                     </div><!-- /.col-md-4 -->
@@ -362,8 +363,12 @@
 
     <!-- All The JS Files
     ================================================== -->
-    <script src="{{asset('frontend/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    {{-- <script src="{{asset('frontend/assets/js/vendor/jquery-1.12.4.min.js')}}"></script> --}}
+    <script src="{{asset('assets-admin/assets/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/plugins.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script> <!-- main-js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    @yield('linkfooter')
 </body>
 </html>

@@ -19,6 +19,23 @@ Route::post('/login','AuthController@postLogin')->name('postLogin');
 Route::get('/logout','AuthController@logout')->name('logout');
 
 Route::get('/berita','BeritaController@berita')->name('berita');
+Route::get('/berita/{id}/{slug}','BeritaController@singleBerita')->name('singleBerita');
+
+Route::get('/sejarah','ProfilController@sejarah')->name('sejarah');
+Route::get('/visi-misi','ProfilController@visimisi')->name('visimisi');
+Route::get('/struktur-organisasi','ProfilController@struktur')->name('struktur');
+Route::get('/renstra','ProfilController@renstra')->name('renstra');
+Route::get('/senat-fakultas','ProfilController@senat')->name('senat');
+
+Route::group(['prefix'=>'akademik'],function(){
+Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
+
+});
+
+
+
+Route::get('/galeri','GaleriController@galeri')->name('galeri');
+
 
 Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], function(){
     Route::get('/','Dashboard\HomeController@index')->name('index_admin');
