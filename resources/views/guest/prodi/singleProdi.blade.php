@@ -71,6 +71,11 @@
         </div><!-- /.container -->
     </section>
 
+    @php
+
+    // dd($dosens);
+    @endphp
+    @if ($dosens->count() != 0)
     <div class="apartments-area four bg-gray-color">
         <div class="container">
             <div class="row">
@@ -87,7 +92,7 @@
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                                 <div class="row">
-                                    @if ($dosens != null)
+
                                     @foreach ($dosens as $dosen)
                                     <div class="col-md-3 col-sm-6 col-xs-6 dosen-grid">
                                         <div class="apartments-content">
@@ -107,7 +112,7 @@
                                         </div><!-- /.partments-content -->
                                     </div><!-- /.col-md-4 -->
                                     @endforeach
-                                    @endif
+
                                 </div><!-- /.row -->
                             </div><!-- /.popular-apartment -->
                         </div><!-- /.tab-content -->
@@ -116,5 +121,7 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div>
+    @endif
+
 
 @endsection

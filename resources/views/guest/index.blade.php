@@ -488,7 +488,7 @@
                                 </span> --}}
                             </div><!-- /.entry-header -->
                             <div class="entry-header">
-                                <h3><a href="blog-single.html">{{$berita->judul}}</a></h3>
+                                <h3><a href="{{route('singleBerita',['id'=>$berita->id,'slug'=>$berita->slug])}}">{{$berita->judul}}</a></h3>
                             </div><!-- /.entry-header -->
                             {{-- <div class="entry-footer">
                                 <div class="entry-footer-meta">

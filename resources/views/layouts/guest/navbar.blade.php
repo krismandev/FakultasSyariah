@@ -15,9 +15,6 @@
                                     <a href="{{route('index')}}">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('galeri')}}">Galeri</a>
-                                </li>
-                                <li>
                                     <a href="#">Profile</a>
                                     <ul class="sub-menu">
                                         <li>
@@ -44,15 +41,12 @@
                                             <a href="{{route('akreditasi')}}">Akreditasi</a>
                                         </li>
                                         <li>
-                                            <a href="comming.html">Panduan Akademik</a>
+                                            <a href="{{route('panduan')}}">Panduan Akademik</a>
                                         </li>
                                         <li>
                                             <a href="404.html">Kalender Wisuda</a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
-                                    <a href="{{route('berita')}}">Berita</a>
                                 </li>
                                 <li>
                                     <a href="#">Prodi</a>
@@ -64,6 +58,12 @@
                                         </li>
                                         @endforeach
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="{{route('berita')}}">Berita</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('galeri')}}">Galeri</a>
                                 </li>
                                 <li>
                                     <a href="contact.html">Contact</a>

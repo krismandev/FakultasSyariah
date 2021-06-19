@@ -31,6 +31,7 @@ Route::get('/prodi/{id}/{slug}','ProdiController@singleProdi')->name('singleProd
 
 Route::group(['prefix'=>'akademik'],function(){
 Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
+Route::get('/panduan-akademik','AkademikController@panduan')->name('panduan');
 
 });
 
