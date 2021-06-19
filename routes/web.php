@@ -27,6 +27,8 @@ Route::get('/struktur-organisasi','ProfilController@struktur')->name('struktur')
 Route::get('/renstra','ProfilController@renstra')->name('renstra');
 Route::get('/senat-fakultas','ProfilController@senat')->name('senat');
 
+Route::get('/prodi/{id}/{slug}','ProdiController@singleProdi')->name('singleProdi');
+
 Route::group(['prefix'=>'akademik'],function(){
 Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
 

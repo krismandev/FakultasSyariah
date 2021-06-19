@@ -60,7 +60,7 @@
                                         @foreach ($prodis as $prodi)
 
                                         <li>
-                                            <a href="blog.html">{{$prodi->nama_prodi}}</a>
+                                            <a href="{{route('singleProdi',['id'=>$prodi->id,'slug'=>Str::slug($prodi->nama_prodi)])}}">{{$prodi->nama_prodi}}</a>
                                         </li>
                                         @endforeach
                                     </ul>

@@ -54,9 +54,9 @@
                                                         {{date('d M Y',strtotime($berita->created_at))}}
                                                     </span>
                                                     <span class="devied"></span>
-                                                    <span class="entry-category">
+                                                    {{-- <span class="entry-category">
                                                         <a href="#">Rooms &amp; suites</a>
-                                                    </span>
+                                                    </span> --}}
                                                 </div><!-- /.entry-header -->
                                                 <div class="entry-header">
                                                     <h3><a href="{{route('singleBerita',['id'=>$berita->id,'slug'=>$berita->slug])}}">{{$berita->judul}}</a></h3>

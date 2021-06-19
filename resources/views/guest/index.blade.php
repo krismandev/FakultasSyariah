@@ -474,7 +474,7 @@
                     <article class="post">
                         <figure class="post-thumb">
                             <a href="blog-single.html">
-                                <img src="{{asset('img/berita/'.$berita->gambar)}}" alt="blog" />
+                                <img src="{{url('img/berita/'.$berita->gambar)}}" alt="blog" />
                             </a>
                         </figure><!-- /.post-thumb -->
                         <div class="post-content">
