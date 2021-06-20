@@ -1,5 +1,5 @@
 @extends('layouts.guest.master')
-@section('title','Panduan Akademik')
+@section('title','Berita')
 @section('content')
 
     <!-- ====== Page Header ====== -->
@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="page-title">Panduan Akademik</h2>
+                    <h2 class="page-title">Kalender Wisuda</h2>
 
                 </div>
             </div>
@@ -21,9 +21,9 @@
                 <div class="col-md-12">
                     <div class="breadcrumbs">
                         <span class="first-item">
-                         <a href="index01.html">Beranda</a></span>
+                         <a href="{{route('index')}}">Beranda</a></span>
                         <span class="separator">&gt;</span>
-                        <span class="last-item">Panduan Akademik</span>
+                        <span class="last-item">Kalender Wisuda</span>
                     </div>
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
@@ -37,37 +37,33 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-title-area text-center">
-                                <h2 class="section-title default-text-gradient">Panduan Akademik</h2>
+                                <h2 class="section-title default-text-gradient">Kalender Wisuda</h2>
                                 {{-- <p class="section-description">Best offers from the house chef</p> --}}
                             </div><!-- /.section-title-area -->
                         </div><!-- /.col-md-12 -->
                     </div><!-- /.row -->
                     <div class="row">
                         <div class="about-top-content">
-                            <table class="table table-striped" id="data_panduans_reguler">
+                            <table class="table table-striped" id="data_kalenders_reguler">
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Judul Panduan</th>
-                                    <th scope="col">Nomor</th>
-                                    <th scope="col">Dokumen</th>
+                                    <th scope="col">Agenda</th>
+                                    <th scope="col">Tanggal Pelaksanaan</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($panduans as $panduan)
+                                    @foreach ($kalenders as $kalender)
                                     <tr>
-                                        <td scope="row">{{$panduans->perPage()*($panduans->currentPage()-1)+$i}}</td>
+                                        <td scope="row">{{$kalenders->perPage()*($kalenders->currentPage()-1)+$i}}</td>
                                         @php
                                             $i++;
                                         @endphp
-                                        <td>{{$panduan->judul_panduan}}</td>
-                                        <td>{{$panduan->nomor}}</td>
-                                        <td>
-                                            <a href="{{url('doc/panduan/'.$panduan->file)}}">PDF</a>
-                                        </td>
+                                        <td>{{$kalender->agenda}}</td>
+                                        <td>{{date('d M Y',strtotime($kalender->tanggal_pelaksanaan))}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -83,7 +79,7 @@
 @section('linkfooter')
 <script>
     $(document).ready(function () {
-        $('#data_panduans_reguler').DataTable();
+        $('#data_kalenders_reguler').DataTable();
     });
 </script>
 @endsection

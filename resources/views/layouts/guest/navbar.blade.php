@@ -11,11 +11,11 @@
                     <div class="menu-wrapper">
                         <div class="menu-content">
                             <ul class="menu-list">
-                                <li>
-                                    <a href="{{route('index')}}">Beranda</a>
+                                <li class="active">
+                                    <a href="{{route('index')}}" class="{{(request()->is('/')) ? 'active' : ''}}">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="#">Profile</a>
+                                    <a href="#" class="{{(request()->is('visi-misi') || request()->is('sejarah*') || request()->is('struktur-organisasi') || request()->is('renstra') || request()->is('senat-fakultas') ) ? 'active' : ''}}">Profile</a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="{{route('sejarah')}}">Sejarah</a>
@@ -35,7 +35,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Akademik</a>
+                                    <a href="#" class="{{(request()->is('akademik*')) ? 'active' : ''}}">Akademik</a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="{{route('akreditasi')}}">Akreditasi</a>
@@ -44,12 +44,12 @@
                                             <a href="{{route('panduan')}}">Panduan Akademik</a>
                                         </li>
                                         <li>
-                                            <a href="404.html">Kalender Wisuda</a>
+                                            <a href="{{route('kalenderWisuda')}}">Kalender Wisuda</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Prodi</a>
+                                    <a href="#" class="{{(request()->is('prodi*')) ? 'active' : ''}}">Prodi</a>
                                     <ul class="sub-menu">
                                         @foreach ($prodis as $prodi)
 
@@ -60,13 +60,13 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{route('berita')}}">Berita</a>
+                                    <a href="{{route('berita')}}" class="{{(request()->is('berita*')) ? 'active' : ''}}">Berita</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('galeri')}}">Galeri</a>
+                                    <a href="{{route('galeri')}}" class="{{(request()->is('galeri*')) ? 'active' : ''}}">Galeri</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="#" class="{{(request()->is('kontak*')) ? 'active' : ''}}">Contact</a>
                                 </li>
                             </ul> <!-- /.menu-list -->
                         </div> <!-- /.menu-content-->

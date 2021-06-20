@@ -686,7 +686,7 @@ td {
 .gradient-circle > div span {
   background: #fff;
   border-radius: 50%;
-  padding: 30px;
+  padding: 10px;
   display: block;
 }
 
@@ -6838,21 +6838,21 @@ Sign In/Sign Up Pop up
   display: table;
   width: 250px;
   border-radius: 50%;
-  height: 250px;
+  height: 400px;
   text-align: center;
 }
 .about-bottom-content .image-content img {
   background: #fff;
-  padding: 25px;
+  padding: 0px;
   border-radius: 50%;
 }
 .about-bottom-content .author-sign img {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .about-bottom-content .author-name {
   text-align: center;
   position: relative;
-  top: 25px;
+  top: 5px;
   font-size: 36px;
   font-family: inherit;
   font-weight: bold;
@@ -6880,6 +6880,10 @@ Sign In/Sign Up Pop up
   position: relative;
   top: 15px;
 }
+
+.about-bottom-content .author-content {
+    top: -80px !important;
+  }
 
 .author-content {
   position: relative;

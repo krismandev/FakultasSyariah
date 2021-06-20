@@ -30,9 +30,9 @@ Route::get('/senat-fakultas','ProfilController@senat')->name('senat');
 Route::get('/prodi/{id}/{slug}','ProdiController@singleProdi')->name('singleProdi');
 
 Route::group(['prefix'=>'akademik'],function(){
-Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
-Route::get('/panduan-akademik','AkademikController@panduan')->name('panduan');
-
+    Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
+    Route::get('/panduan-akademik','AkademikController@panduan')->name('panduan');
+    Route::get('/kalender-wisuda','AkademikController@kalenderWisuda')->name('kalenderWisuda');
 });
 
 
@@ -135,5 +135,12 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::post('/','Dashboard\LaporanController@storeLaporan')->name('storeLaporan');
         Route::get('/delete/{id}','Dashboard\LaporanController@deleteLaporan')->name('deleteLaporan');
     });
+
+    Route::group(['prefix'=>'pimpinan-fakultas'],function(){
+        Route::get('/','Dashboard\PimpinanFakultasController@getPimpinan')->name('getPimpinan');
+        Route::post('/','Dashboard\PimpinanFakultasController@storePimpinan')->name('storePimpinan');
+        Route::get('/delete/{id}','Dashboard\PimpinanFakultasController@deletePimpinan')->name('deletePimpinan');
+    });
+
 
 });

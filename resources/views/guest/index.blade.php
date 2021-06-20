@@ -39,6 +39,12 @@
     <script src="{{asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
+<style>
+    .galeri-slider{
+        position: relative;
+    }
+</style>
+
 <body>
     <!-- ====== Header Mobile Area ====== -->
     <header class="mobile-header-area bg-nero hidden-md hidden-lg">
@@ -503,9 +509,35 @@
                 @endforeach
                 @endif
             </div><!-- /.row -->
-            <a href="blog.html" class="button">show all</a>
+            <a href="{{route('berita')}}" class="button">Lihat Semua Berita</a>
         </div><!-- /.container -->
     </div><!-- /.Blog-area-->
+
+    <section class="about-bottom-content">
+        <div class="container">
+            <div class="row">
+                <div class="">
+                    @foreach ($galeris as $galeri)
+                    <div class="col-md-4">
+                        <div class="image-content gradient-circle">
+                            <div>
+                                <span>
+                                    <img src="{{asset('img/galeri/'.$galeri->gambar)}}" alt="johan" style="width: 250px; height: 300px; object-fit: cover; object-position: center;">
+                                </span>
+                            </div>
+                        </div><!-- /.image-content -->
+                        <div class="author-content">
+                            <div class="author-content-area">
+                                <h2 class="author-name default-text-gradient">Dr. Abdus Sabbir</h2>
+                                <p class="author-designation">Rent House Admin</p>
+                            </div><!-- /.author-content-area -->
+                        </div><!-- /.author-content -->
+                    </div><!-- /.col-md-7 -->
+                    @endforeach
+                </div>
+            </div><!-- /.riv row -->
+        </div><!-- /.container -->
+    </section>
 
     <!-- ====== Footer Area ====== -->
     <footer class="footer-area" style="background-image:url({{asset('frontend/assets/images/footer-bg.png)')}}">
@@ -572,6 +604,40 @@
     <script src="{{asset('frontend/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/plugins.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script> <!-- main-js -->
+    <script>
+        $(document).ready(function () {
+            var $galerislider = $(".galeri-slider");
+			$galerislider.owlCarousel({
+				 loop: true,
+				 margin: 30,
+				 items: 3,
+				 responsive:{
+					280:{
+						items: 1
+					},
+					500:{
+						items: 1
+					},
+					600:{
+						items: 2
+					},
+					800:{
+						items: 2
+					},
+					1000:{
+						items: 3
+					},
+					1200:{
+						items: 3
+					},
+					1400:{
+						items: 3
+					}
+				}
+			});
+
+        });
+    </script>
 </body>
 </html>
 
