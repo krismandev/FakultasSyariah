@@ -51,7 +51,9 @@
               <i class="fa fa-thumbs-o-up fa-5x"></i>
               <h3>No Content Padding</h3>
             </div> -->
-            <img src="{{url('img/pimpinan/'.$pimpinan->gambar)}}" style="max-width:150px;"; alt="">
+            <a href="{{url('img/pimpinan/'.$pimpinan->gambar)}}">
+                <img src="{{url('img/pimpinan/'.$pimpinan->gambar)}}" style="width:200px; height: 150px; object-fit: cover; object-position: center;" alt="">
+            </a>
           </div>
           <h4>{{$pimpinan->nama}}</h4>
           <span>{{$pimpinan->posisi}}</span>

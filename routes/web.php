@@ -29,15 +29,18 @@ Route::get('/senat-fakultas','ProfilController@senat')->name('senat');
 
 Route::get('/prodi/{id}/{slug}','ProdiController@singleProdi')->name('singleProdi');
 
+
+
 Route::group(['prefix'=>'akademik'],function(){
     Route::get('/akreditasi','AkademikController@akreditasi')->name('akreditasi');
     Route::get('/panduan-akademik','AkademikController@panduan')->name('panduan');
     Route::get('/kalender-wisuda','AkademikController@kalenderWisuda')->name('kalenderWisuda');
 });
 
-
-
 Route::get('/galeri','GaleriController@galeri')->name('galeri');
+
+Route::get('/laporan','LaporanController@laporan')->name('laporan');
+Route::get('/pencapaian','PencapaianController@pencapaian')->name('pencapaian');
 
 
 Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], function(){
@@ -142,5 +145,10 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/delete/{id}','Dashboard\PimpinanFakultasController@deletePimpinan')->name('deletePimpinan');
     });
 
+    Route::group(['prefix'=>'pencapaian'],function(){
+        Route::get('/','Dashboard\PencapaianController@getPencapaian')->name('getPencapaian');
+        Route::post('/','Dashboard\PencapaianController@storePencapaian')->name('storePencapaian');
+        Route::get('/delete/{id}','Dashboard\PencapaianController@deletePencapaian')->name('deletePencapaian');
+    });
 
 });

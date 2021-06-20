@@ -6,6 +6,8 @@ use App\Banner;
 use App\Berita;
 use App\Prodi;
 use App\Galeri;
+use App\Pencapaian;
+use App\PimpinanFakultas;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +29,8 @@ class HomeController extends Controller
         $beritas = Berita::orderBy('created_at','desc')->paginate(3);
         $prodis = Prodi::orderBy('id','asc')->get();
         $galeris = Galeri::paginate(3);
-        return view('guest.index',compact(['banners','beritas','prodis','galeris']));
+        $pimpinans = PimpinanFakultas::orderBy('posisi','asc')->get();
+        $pencapaians = Pencapaian::orderBy('created_at','desc')->paginate(3);
+        return view('guest.index',compact(['banners','beritas','prodis','galeris','pimpinans','pencapaians']));
     }
 }

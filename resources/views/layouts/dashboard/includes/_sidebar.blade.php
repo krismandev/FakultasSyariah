@@ -37,6 +37,7 @@
       	</li>
         <li><a href="{{route('getLaporan')}}" class="{{(request()->is('admin/laporan*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Laporan</span></a></li>
         <li><a href="{{route('getPimpinan')}}" class="{{(request()->is('admin/pimpinan-fakultas*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Pimpinan Fakultas</span></a></li>
+        <li><a href="{{route('getPencapaian')}}" class="{{(request()->is('admin/pencapaian*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Pencapaian</span></a></li>
 
         <li>
             <a href="{{route('getGaleri')}}" class="{{(request()->is('admin/galeri*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Galeri</span></a>

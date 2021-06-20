@@ -60,14 +60,25 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="#" class="{{(request()->is('laporan*') || request()->is('pencapaian*')) ? 'active' : ''}}">Laporan</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{route('laporan')}}">Laporan</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('pencapaian')}}">Pencapaian</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="{{route('berita')}}" class="{{(request()->is('berita*')) ? 'active' : ''}}">Berita</a>
                                 </li>
                                 <li>
                                     <a href="{{route('galeri')}}" class="{{(request()->is('galeri*')) ? 'active' : ''}}">Galeri</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="{{(request()->is('kontak*')) ? 'active' : ''}}">Contact</a>
-                                </li>
+                                </li> --}}
                             </ul> <!-- /.menu-list -->
                         </div> <!-- /.menu-content-->
                     </div> <!-- /.menu-wrapper -->

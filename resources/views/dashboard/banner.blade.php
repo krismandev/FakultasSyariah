@@ -51,7 +51,7 @@
               <i class="fa fa-thumbs-o-up fa-5x"></i>
               <h3>No Content Padding</h3>
             </div> -->
-            <img src="{{url('img/banner/'.$banner->gambar)}}" style="max-width:100%"; alt="">
+            <img src="{{url('img/banner/'.$banner->gambar)}}" style="width:200px; height: 150px; object-fit: cover; object-position: center;" alt="">
           </div>
         </div>
         <!-- END PANEL NO PADDING -->

@@ -40,7 +40,7 @@
 </head>
 
 <style>
-    .galeri-slider{
+    .pimpinan-slider{
         position: relative;
     }
 </style>
@@ -354,55 +354,25 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading-content-one">
-                        <h2 class="title">About Us</h2>
-                        <h5 class="sub-title">Welcome to our House Rent Company</h5>
+                        <h2 class="title">Selayang Pandang</h2>
+                        {{-- <h5 class="sub-title">Welcome to our House Rent Company</h5> --}}
                     </div><!-- /.heading-content -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
 
             <div class="row">
-                <div class="col-md-2">
-                    <div class="tab-list">
-                        <ul class="nav nav-tabs about-tab hidden-xs hidden-sm" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">About Company</a>
-                            </li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Terms &amp; Condition</a>
-                            </li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Our specialty</a>
-                            </li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Our specialty</a>
-                            </li>
-                        </ul>
-                        <form class="hidden-md hidden-lg">
-                            <select class="about-mobile">
-                                <option value='0'>About Company</option>
-                                <option value='1'>Terms &amp; Condition</option>
-                                <option value='2'>Our specialty</option>
-                                <option value='3'>Our specialty</option>
-                            </select>
-                        </form>
-                    </div> <!-- /.tab-list -->
-                </div> <!-- /.col-md-2 -->
-
                 <div class="col-md-10">
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active row" id="home">
                             <div class="col-md-6">
                                 <div class="text-content">
                                     <p>Amorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae nibh nisl. Cras etitikis mauris egeth lorem ultricies ferme is ntum a inti diam. Morbi mollis pellden tesque offs aiug ueia nec rhoncus. Nam ute ultricies. Cras etitikis mauris eget lorem ultricies ferme ntum a inti diam. Morbi mollis pellen tesque offs aiug ueia nec rhoncus. Nam ute ultricies.</p>
-                                    <ul>
-                                        <li>Amorem ipsum dolor sit amet, consectetur </li>
-                                         <li>Cras etitikis mauris egeth lorem ultricies</li>
-                                         <li>Amorem ipsum dolor sit amet, consectetur </li>
-                                         <li>Cras etitikis mauris egeth lorem ultricies</li>
-                                         <li>Amorem ipsum dolor sit amet, consectetur </li>
-                                         <li>Cras etitikis mauris egeth lorem ultricies</li>
-                                    </ul>
+
                                 </div><!-- /.text-content -->
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
                                 <div class="image-content">
-                                    <img src="{{asset('frontend/assets/images/about-image.png')}}" alt="about" />
+                                    <img src="{{asset('frontend/assets/images/user.jpg')}}" style="width: 458px; height: 346px; object-fit: cover; object-position: center;" alt="about" />
                                 </div><!-- /.text-content -->
                             </div><!-- /.col-md-6 -->
                         </div> <!-- /.home -->
@@ -513,23 +483,77 @@
         </div><!-- /.container -->
     </div><!-- /.Blog-area-->
 
+    <div class="apartments-area four bg-gray-color">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="heading-content-one">
+                        <h2 class="title">Pencapaian</h2>
+                        {{-- <h5 class="sub-title">Our News Feed</h5> --}}
+                    </div><!-- /.blog-heading-content -->
+                </div><!-- /.row -->
+            </div><!-- /.col-md-12 -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="apartment-tab-area">
+                        <div class="tab-content">
+                            <div role="tabpanel" id="popular-apartment" class="tab-pane fade in active">
+                                <div class="row">
+                                    @foreach ($pencapaians as $pencapaian)
+                                    <div class="col-md-4 col-sm-6 col-xs-6">
+                                        <div class="apartments-content">
+                                            <div class="image-content">
+                                                <a href="apartment-single.html">
+                                                    <img src="{{url('img/pencapaian/'.$pencapaian->gambar)}}" alt="apartment" style="width: 377px; height: 283px; object-fit: cover; object-position: center;">
+                                                </a>
+                                            </div><!-- /.image-content -->
+
+                                            <div class="text-content">
+                                                <div class="top-content">
+                                                    <h3>
+                                                        <a href="#">{{$pencapaian->judul}}</a>
+                                                    </h3>
+                                                </div><!-- /.top-content -->
+                                            </div><!-- /.text-content -->
+                                        </div><!-- /.partments-content -->
+                                    </div><!-- /.col-md-4 -->
+                                    @endforeach
+
+                                </div><!-- /.row -->
+                                <a href="#" class="more-link default-template-gradient">Lihat Semua</a>
+                            </div><!-- /.popular-apartment -->
+                        </div><!-- /.tab-content -->
+                    </div><!-- /.apartment-tab-area -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+
     <section class="about-bottom-content">
         <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="heading-content-one">
+                        <h2 class="title">Pimpinan Fakultas</h2>
+                        {{-- <h5 class="sub-title">Our News Feed</h5> --}}
+                    </div><!-- /.blog-heading-content -->
+                </div><!-- /.row -->
+            </div><!-- /.col-md-12 -->
             <div class="row">
                 <div class="">
-                    @foreach ($galeris as $galeri)
+                    @foreach ($pimpinans as $pimpinan)
                     <div class="col-md-4">
                         <div class="image-content gradient-circle">
                             <div>
                                 <span>
-                                    <img src="{{asset('img/galeri/'.$galeri->gambar)}}" alt="johan" style="width: 250px; height: 300px; object-fit: cover; object-position: center;">
+                                    <img src="{{asset('img/pimpinan/'.$pimpinan->gambar)}}" alt="johan" style="width: 250px; height: 300px; object-fit: cover; object-position: center;">
                                 </span>
                             </div>
                         </div><!-- /.image-content -->
                         <div class="author-content">
                             <div class="author-content-area">
-                                <h2 class="author-name default-text-gradient">Dr. Abdus Sabbir</h2>
-                                <p class="author-designation">Rent House Admin</p>
+                                <h4 class="author-name default-text-gradient">{{$pimpinan->nama}}</h4>
+                                <p class="author-designation">{{$pimpinan->posisi}}</p>
                             </div><!-- /.author-content-area -->
                         </div><!-- /.author-content -->
                     </div><!-- /.col-md-7 -->
@@ -606,8 +630,8 @@
     <script src="{{asset('frontend/assets/js/main.js')}}"></script> <!-- main-js -->
     <script>
         $(document).ready(function () {
-            var $galerislider = $(".galeri-slider");
-			$galerislider.owlCarousel({
+            var $pimpinanslider = $(".pimpinan-slider");
+			$pimpinanslider.owlCarousel({
 				 loop: true,
 				 margin: 30,
 				 items: 3,
