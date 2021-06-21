@@ -21,7 +21,7 @@
                 <div class="col-md-12">
                     <div class="breadcrumbs">
                         <span class="first-item">
-                         <a href="index01.html">Beranda</a></span>
+                         <a href="{{route('index')}}">Beranda</a></span>
                         <span class="separator">&gt;</span>
                         <span class="last-item">Panduan Akademik</span>
                     </div>

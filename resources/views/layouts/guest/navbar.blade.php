@@ -6,7 +6,7 @@
 <header class="header-bottom-content bg-nero hidden-xs hidden-sm">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-sm-10">
+            <div class="col-md-12 col-sm-12">
                 <nav id="main-nav" class="site-navigation top-navigation">
                     <div class="menu-wrapper">
                         <div class="menu-content">
@@ -67,6 +67,17 @@
                                         </li>
                                         <li>
                                             <a href="{{route('pencapaian')}}">Pencapaian</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Jurnal</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="http://e-journal.lp2m.uinjambi.ac.id/ojp/index.php/al-risalah/index">Al-Risalah</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://e-journal.lp2m.uinjambi.ac.id/ojp/index.php/tpj/index">Tanah Pilih</a>
                                         </li>
                                     </ul>
                                 </li>

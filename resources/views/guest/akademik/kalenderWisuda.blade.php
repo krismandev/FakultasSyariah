@@ -1,5 +1,5 @@
 @extends('layouts.guest.master')
-@section('title','Berita')
+@section('title','Kalender Wisuda')
 @section('content')
 
     <!-- ====== Page Header ====== -->

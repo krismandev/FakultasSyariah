@@ -563,6 +563,31 @@
         </div><!-- /.container -->
     </section>
 
+    <div class="gallery-area four">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="gallery-left-content">
+                        <h2>Galeri Fakultas Syariah</h2>
+                        <a href="{{route('galeri')}}" class="button nevy-button">Lihat semua</a>
+                    </div><!-- /.right-content -->
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-8 col-sm-8">
+                    <div class="gallery-slider owl-carousel owl-theme">
+                        @if ($galeris->count() != 0)
+                        @foreach ($galeris as $galeri)
+
+                        <div class="item">
+                            <img src="{{url('img/galeri/'.$galeri->gambar)}}" alt="gallery" style="width: 240px; height: 271px; object-fit: cover; object-position: center;"/>
+                        </div><!-- /.item -->
+                        @endforeach
+                        @endif
+                     </div><!-- /.owl-demo -->
+                </div><!-- /.col-md-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.gallery-area -->
+
     <!-- ====== Footer Area ====== -->
     <footer class="footer-area" style="background-image:url({{asset('frontend/assets/images/footer-bg.png)')}}">
        <div class="container">

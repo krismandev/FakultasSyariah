@@ -1,5 +1,5 @@
 @extends('layouts.guest.master')
-@section('title','Berita')
+@section('title','Akreditasi')
 @section('content')
 
     <!-- ====== Page Header ====== -->
@@ -21,7 +21,7 @@
                 <div class="col-md-12">
                     <div class="breadcrumbs">
                         <span class="first-item">
-                         <a href="index01.html">Beranda</a></span>
+                         <a href="{{route('index')}}">Beranda</a></span>
                         <span class="separator">&gt;</span>
                         <span class="last-item">Akreditasi</span>
                     </div>
