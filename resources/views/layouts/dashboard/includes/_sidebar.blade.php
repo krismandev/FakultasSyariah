@@ -11,7 +11,7 @@
       		<a href="{{route('getBanner')}}" class="{{(request()->is('admin/banner*') || request()->is('admin/video-banner*') ) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Banner</span></a>
       	</li>
         <li>
-      		<a href="#kariralumni" data-toggle="collapse" class="collapsed {{(request()->is('admin/akademik*') || request()->is('admin/bidang-pekerjaan*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-hourglass"></i> <span>Akademik</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+      		<a href="#kariralumni" data-toggle="collapse" class="collapsed {{(request()->is('admin/akademik*')) ? 'active' : ''}}" aria-expanded="false"><i class="fa fa-mortar-board"></i> <span>Akademik</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="kariralumni" class="collapse" aria-expanded="false" style="height: 0px;">
       			<ul class="nav">
       				<li class=""><a href="{{route('getAkreditasi')}}" >Akreditasi Institusi </a></li>
@@ -19,12 +19,12 @@
 
       				<li class=""><a href="{{route('getPanduan')}}"> Panduan Akademik </a></li>
       				<li class=""><a href="{{route('getKalenderWisuda')}}"> Kalender Wisuda </a></li>
-      				<li class=""><a href="#"> Kurikulum </a></li>
+      				{{-- <li class=""><a href="#"> Kurikulum </a></li> --}}
       			</ul>
       		</div>
       	</li>
         <li>
-      		<a href="#green-campus" data-toggle="collapse" class="collapsed {{(request()->is('admin/profil*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-leaf"></i> <span>Profil</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+      		<a href="#green-campus" data-toggle="collapse" class="collapsed {{(request()->is('admin/profil*')) ? 'active' : ''}}" aria-expanded="false"><i class="fa fa-server"></i> <span>Profil</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="green-campus" class="collapse" aria-expanded="false" style="height: 0px;">
       			<ul class="nav">
       				<li class="{{(request()->is('admin/sejarah*')) ? 'active' : ''}}"><a href="{{route('getSejarah')}}" >Sejarah </a></li>
@@ -35,15 +35,15 @@
       			</ul>
       		</div>
       	</li>
-        <li><a href="{{route('getLaporan')}}" class="{{(request()->is('admin/laporan*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Laporan</span></a></li>
-        <li><a href="{{route('getPimpinan')}}" class="{{(request()->is('admin/pimpinan-fakultas*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Pimpinan Fakultas</span></a></li>
-        <li><a href="{{route('getPencapaian')}}" class="{{(request()->is('admin/pencapaian*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Pencapaian</span></a></li>
+        <li><a href="{{route('getLaporan')}}" class="{{(request()->is('admin/laporan*')) ? 'active' : ''}}"><i class="fa fa-file-archive-o"></i> <span>Laporan</span></a></li>
+        <li><a href="{{route('getPimpinan')}}" class="{{(request()->is('admin/pimpinan-fakultas*')) ? 'active' : ''}}"><i class="lnr lnr-users"></i> <span>Pimpinan Fakultas</span></a></li>
+        <li><a href="{{route('getPencapaian')}}" class="{{(request()->is('admin/pencapaian*')) ? 'active' : ''}}"><i class="lnr lnr-star"></i> <span>Pencapaian</span></a></li>
 
         <li>
             <a href="{{route('getGaleri')}}" class="{{(request()->is('admin/galeri*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Galeri</span></a>
         </li>
 
-        @if(auth()->user()->role == 'superadmin')
+        {{-- @if(auth()->user()->role == 'superadmin')
     		<li>
         	<a href="" class="{{(request()->is('admin/tim*')) ? 'active' : ''}}"><i class="lnr lnr-users"></i> <span>Tim</span></a>
         </li>
@@ -53,7 +53,7 @@
         </li>
         <li>
         	<a href="" class="{{(request()->is('admin/pesan*')) ? 'active' : ''}}"><i class="lnr lnr-bubble"></i> <span>Pesan</span></a>
-        </li>
+        </li> --}}
       </ul>
     </nav>
   </div>

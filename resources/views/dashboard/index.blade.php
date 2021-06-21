@@ -12,41 +12,41 @@
 				<div class="metric">
 					<span class="icon"><i class="fa fa-newspaper-o"></i></span>
 					<p>
-						<span class="number"></span>
+						<span class="number">{{sumBerita()}}</span>
 						<span class="title">Berita</span>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="metric">
-					<span class="icon"><i class="fa fa-eye"></i></span>
+					<span class="icon"><i class="lnr lnr-users"></i></span>
 					<p>
-						<span class="number"></span>
-						<span class="title">Foto</span>
+						<span class="number">{{sumDosen()}}</span>
+						<span class="title">Dosen</span>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="metric">
-					<span class="icon"><i class="fa fa-eye"></i></span>
+					<span class="icon"><i class="lnr lnr-picture"></i></span>
 					<p>
 						<span class="number"></span>
-						<span class="title">Poster</span>
+						<span class="title">Galeri</span>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="metric">
-					<span class="icon"><i class="fa fa-eye"></i></span>
+					<span class="icon"><i class="lnr lnr-picture"></i></span>
 					<p>
-						<span class="number"></span>
-						<span class="title">Event</span>
+						<span class="number">{{sumBanner()}}</span>
+						<span class="title">Banner</span>
 					</p>
 				</div>
 			</div>
 
 		</div>
-    <div class="row">
+    {{-- <div class="row">
 			<div class="col-md-3">
 				<div class="metric">
 					<span class="icon"><i class="fa fa-eye"></i></span>
@@ -56,7 +56,7 @@
 					</p>
 				</div>
 			</div>
-    </div>
+    </div> --}}
 
 	</div>
 </div>
