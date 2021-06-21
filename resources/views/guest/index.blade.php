@@ -520,7 +520,7 @@
                                     @endforeach
 
                                 </div><!-- /.row -->
-                                <a href="#" class="more-link default-template-gradient">Lihat Semua</a>
+                                <a href="{{route('pencapaian')}}" class="more-link default-template-gradient">Lihat Semua</a>
                             </div><!-- /.popular-apartment -->
                         </div><!-- /.tab-content -->
                     </div><!-- /.apartment-tab-area -->
@@ -578,7 +578,9 @@
                         @foreach ($galeris as $galeri)
 
                         <div class="item">
-                            <img src="{{url('img/galeri/'.$galeri->gambar)}}" alt="gallery" style="width: 240px; height: 271px; object-fit: cover; object-position: center;"/>
+                            <a href="{{url('img/galeri/'.$galeri->gambar)}}">
+                                <img src="{{url('img/galeri/'.$galeri->gambar)}}" alt="gallery" style="width: 240px; height: 271px; object-fit: cover; object-position: center;"/>
+                            </a>
                         </div><!-- /.item -->
                         @endforeach
                         @endif
@@ -592,49 +594,48 @@
     <footer class="footer-area" style="background-image:url({{asset('frontend/assets/images/footer-bg.png)')}}">
        <div class="container">
            <div class="row">
-               <div class="col-md-4">
+               <div class="col-md-6">
                    <div class="widget widget_about yellow-color">
                        <div class="widget-title-area">
                            <h3 class="widget-title">
-                               About House Rent
+                               Kontak Kami
                            </h3><!-- /.widget-title -->
                        </div><!-- /.widget-title-area -->
                        <div class="widget-about-content">
-                           <img src="{{asset('frontend/assets/images/footer-logo.png')}}" alt="house" />
-                           <p>We Provide Premium Word Press, Ghost and HTML template. Our Perm tritium Templates is, develop gaped in a way so that the clients find  Support. Themes are developed in a way so that the clients find.</p>
-                           <a href="#" class="button">More</a>
+                           <div class="row">
+                                <div class="col-md-1">
+                                   <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="col-md-11">
+                                    <span>08xx-xxxx-xxxx</span>
+                                </div>
+
+                           </div>
+                           <div class="row">
+                            <div class="col-md-1">
+                               <i class="fa fa-at"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <span>syariah@uinjambi.ac.id</span>
+                            </div>
+
+                       </div>
                        </div><!-- /.widget-content -->
                    </div><!-- /.widget widget_about -->
                </div><!-- /.col-md-4 -->
-               <div class="col-md-4">
+               <div class="col-md-6">
                    <div class="widget widget_place_category yellow-color">
                        <div class="widget-title-area">
-                           <h3 class="widget-title">Place Category</h3><!-- /.widget-title -->
+                           <h3 class="widget-title">Menu Cepat</h3><!-- /.widget-title -->
                        </div><!-- /.widget-title-area -->
                        <ul>
-                           <li>Flat for Rent <a href="#">Francis</a></li>
-                           <li>Flat for Rent <a href="#">Collins St</a></li>
-                           <li>Flat for Rent <a href="#">Rose Ln</a></li>
-                           <li>Flat for Rent <a href="#">Cosgrave Ln</a></li>
-                           <li>Flat for Rent <a href="#">Bourke St</a></li>
-                           <li>Flat for Rent <a href="#">Flienders Ln</a></li>
+                           <li> <a href="{{route('panduan')}}">Panduan Akademik</a></li>
+                           <li> <a href="{{route('berita')}}">Berita</a></li>
+                           <li> <a href="{{route('galeri')}}">Galeri</a></li>
+                           <li> <a href="{{route('pencapaian')}}">Prestasi</a></li>
+                           <li> <a href="http://e-journal.lp2m.uinjambi.ac.id/ojp/index.php/al-risalah/index">Jurnal Al-Risalah</a></li>
+                           <li> <a href="http://e-journal.lp2m.uinjambi.ac.id/ojp/index.php/tpj/index">Jurnal Tanah Pilih</a></li>
                        </ul>
-                   </div><!-- /.widget -->
-               </div><!-- /.col-md-4 -->
-               <div class="col-md-4">
-                   <div class="widget widget_instagram yellow-color">
-                       <div class="widget-title-area">
-                           <h3 class="widget-title">Instagram Image</h3><!-- /.widget-title -->
-                       </div><!-- /.widget-title-area -->
-                       <div class="instagram-image-content">
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-one.png')}}" alt="" /></a>
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-two.png')}}" alt="" /></a>
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-three.png')}}" alt="" /></a>
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-four.png')}}" alt="" /></a>
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-five.png')}}" alt="" /></a>
-                           <a href="#"><img src="{{asset('frontend/assets/images/instagram/instagram-six.png')}}" alt="" /></a>
-
-                       </div><!-- /.instagram-image-content -->
                    </div><!-- /.widget -->
                </div><!-- /.col-md-4 -->
            </div><!-- /.row -->
