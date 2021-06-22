@@ -43,6 +43,13 @@
             <a href="{{route('getGaleri')}}" class="{{(request()->is('admin/galeri*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Galeri</span></a>
         </li>
 
+        @if (auth()->user()->role == 's')
+
+        <li>
+            <a href="{{route('getUser')}}" class="{{(request()->is('admin/users*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-user"></i> <span>Manajemen User</span></a>
+        </li>
+        @endif
+
         {{-- @if(auth()->user()->role == 'superadmin')
     		<li>
         	<a href="" class="{{(request()->is('admin/tim*')) ? 'active' : ''}}"><i class="lnr lnr-users"></i> <span>Tim</span></a>

@@ -45,7 +45,6 @@ Route::get('/pencapaian','PencapaianController@pencapaian')->name('pencapaian');
 
 Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], function(){
     Route::get('/','Dashboard\HomeController@index')->name('index_admin');
-
     Route::group(['prefix'=>'berita'],function(){
         Route::get('/','Dashboard\BeritaController@getBerita')->name('getBerita');
         Route::get('/create','Dashboard\BeritaController@createBerita')->name('createBerita');
@@ -68,28 +67,30 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/delete/{id}','Dashboard\GaleriController@deleteGaleri')->name('deleteGaleri');
     });
 
-    Route::group(['prefix'=>'akreditasi-institusi'],function(){
-        Route::get('/','Dashboard\AkreditasiController@getAkreditasi')->name('getAkreditasi');
-        Route::post('/','Dashboard\AkreditasiController@storeAkreditasi')->name('storeAkreditasi');
-        Route::get('/delete/{id}','Dashboard\AkreditasiController@deleteAkreditasi')->name('deleteAkreditasi');
-    });
+    Route::prefix('/akademik')->group(function () {
+        Route::group(['prefix'=>'akreditasi-institusi'],function(){
+            Route::get('/','Dashboard\AkreditasiController@getAkreditasi')->name('getAkreditasi');
+            Route::post('/','Dashboard\AkreditasiController@storeAkreditasi')->name('storeAkreditasi');
+            Route::get('/delete/{id}','Dashboard\AkreditasiController@deleteAkreditasi')->name('deleteAkreditasi');
+        });
 
-    Route::group(['prefix'=>'akreditasi-prodi'],function(){
-        Route::get('/','Dashboard\AkreditasiController@getAkrProdi')->name('getAkrProdi');
-        Route::post('/','Dashboard\AkreditasiController@storeAkrProdi')->name('storeAkrProdi');
-        Route::get('/delete/{id}','Dashboard\AkreditasiController@deleteAkrProdi')->name('deleteAkrProdi');
-    });
+        Route::group(['prefix'=>'akreditasi-prodi'],function(){
+            Route::get('/','Dashboard\AkreditasiController@getAkrProdi')->name('getAkrProdi');
+            Route::post('/','Dashboard\AkreditasiController@storeAkrProdi')->name('storeAkrProdi');
+            Route::get('/delete/{id}','Dashboard\AkreditasiController@deleteAkrProdi')->name('deleteAkrProdi');
+        });
 
-    Route::group(['prefix'=>'panduan-akademik'],function(){
-        Route::get('/','Dashboard\PanduanAkademikController@getPanduan')->name('getPanduan');
-        Route::post('/','Dashboard\PanduanAkademikController@storePanduan')->name('storePanduan');
-        Route::get('/delete/{id}','Dashboard\PanduanAkademikController@deletePanduan')->name('deletePanduan');
-    });
+        Route::group(['prefix'=>'panduan-akademik'],function(){
+            Route::get('/','Dashboard\PanduanAkademikController@getPanduan')->name('getPanduan');
+            Route::post('/','Dashboard\PanduanAkademikController@storePanduan')->name('storePanduan');
+            Route::get('/delete/{id}','Dashboard\PanduanAkademikController@deletePanduan')->name('deletePanduan');
+        });
 
-    Route::group(['prefix'=>'kalender-wisuda'],function(){
-        Route::get('/','Dashboard\KalenderWisudaController@getKalenderWisuda')->name('getKalenderWisuda');
-        Route::post('/','Dashboard\KalenderWisudaController@storeKalenderWisuda')->name('storeKalenderWisuda');
-        Route::get('/delete/{id}','Dashboard\KalenderWisudaController@deleteKalenderWisuda')->name('deleteKalenderWisuda');
+        Route::group(['prefix'=>'kalender-wisuda'],function(){
+            Route::get('/','Dashboard\KalenderWisudaController@getKalenderWisuda')->name('getKalenderWisuda');
+            Route::post('/','Dashboard\KalenderWisudaController@storeKalenderWisuda')->name('storeKalenderWisuda');
+            Route::get('/delete/{id}','Dashboard\KalenderWisudaController@deleteKalenderWisuda')->name('deleteKalenderWisuda');
+        });
     });
 
     Route::group(['prefix'=>'profil'],function(){
@@ -151,4 +152,14 @@ Route::group(['middleware' => ['auth','checkRole:s,a'],'prefix' => 'admin'], fun
         Route::get('/delete/{id}','Dashboard\PencapaianController@deletePencapaian')->name('deletePencapaian');
     });
 
+});
+
+Route::group(['middleware' => ['auth','checkRole:s'],'prefix' => 'admin'], function(){
+    Route::group(['prefix'=>'users'],function(){
+        Route::get('/','Dashboard\UserController@getUser')->name('getUser');
+        Route::post('/','Dashboard\UserController@storeUser')->name('storeUser');
+        Route::patch('/','Dashboard\UserController@updateUser')->name('updateUser');
+
+        Route::get('/delete/{id}','Dashboard\UserController@deleteUser')->name('deleteUser');
+    });
 });

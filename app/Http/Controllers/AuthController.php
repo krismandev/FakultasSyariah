@@ -16,6 +16,7 @@ class AuthController extends Controller
           'email' => 'required',
           'password' => 'required'
         ]);
+
         if (Auth::attempt($request->only('email','password'))) {
           return redirect()->route('index_admin');
         }else{
