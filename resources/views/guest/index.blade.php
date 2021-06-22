@@ -18,12 +18,11 @@
     ================================================== -->
     <title>Beranda - Fakultas Syariah UIN STS Jambi</title>
 
-    <!-- Favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="{{asset('frontend/assets/images/house-logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('frontend/assets/images/apple-touch-icon.png')}}">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png')}}">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{asset('frontend/assets/images/logo-uin.png')}}">
+    <link rel="apple-touch-icon" href="{{asset('frontend/assets/images/logo-uin.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('frontend/assets/images/logo-uin.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('frontend/assets/images/logo-uin.png')}}">
 
     <!-- Custom Font
     ================================================== -->
